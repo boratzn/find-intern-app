@@ -96,7 +96,7 @@ class _ViewContentState extends State<ViewContent>
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 30),
 
                   // Logo ve başlık
                   FadeTransition(
@@ -145,7 +145,7 @@ class _ViewContentState extends State<ViewContent>
                     ),
                   ),
 
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 40),
 
                   // Login formu
                   FadeTransition(
@@ -189,7 +189,7 @@ class _ViewContentState extends State<ViewContent>
                               isPassword: true,
                             ),
 
-                            const SizedBox(height: 16),
+                            const SizedBox(height: 10),
 
                             // Şifremi unuttum
                             Align(
@@ -206,7 +206,7 @@ class _ViewContentState extends State<ViewContent>
                               ),
                             ),
 
-                            const SizedBox(height: 24),
+                            const SizedBox(height: 10),
 
                             // Giriş butonu
                             SizedBox(
@@ -294,7 +294,7 @@ class _ViewContentState extends State<ViewContent>
                     ),
                   ),
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
 
                   // Kayıt ol linki
                   FadeTransition(

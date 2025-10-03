@@ -29,7 +29,7 @@ class HomeView extends StackedView<HomeViewModel> {
             ),
             _buildFeaturedInternshipsSection(viewModel),
             _buildRecentApplicationsSection(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
@@ -50,14 +50,14 @@ class HomeView extends StackedView<HomeViewModel> {
       systemOverlayStyle: SystemUiOverlayStyle.dark,
       leading: IconButton(
         icon: Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [Color(0xFF667eea), Color(0xFF764ba2)],
             ),
             borderRadius: BorderRadius.circular(12),
           ),
-          child: Icon(Icons.menu, color: Colors.white, size: 20),
+          child: const Icon(Icons.menu, color: Colors.white, size: 20),
         ),
         onPressed: () => viewModel.scaffoldKey.currentState?.openDrawer(),
       ),
@@ -72,7 +72,7 @@ class HomeView extends StackedView<HomeViewModel> {
                 BoxShadow(
                   color: Colors.black.withValues(alpha: .1),
                   blurRadius: 10,
-                  offset: Offset(0, 2),
+                  offset: const Offset(0, 2),
                 ),
               ],
             ),
@@ -97,7 +97,7 @@ class HomeView extends StackedView<HomeViewModel> {
           ),
           onPressed: () {},
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
       ],
     );
   }
@@ -125,7 +125,7 @@ class HomeView extends StackedView<HomeViewModel> {
                     backgroundColor: Colors.white.withValues(alpha: .2),
                     child: const Icon(Icons.person, size: 30, color: Colors.white),
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   const Text(
                     'Ahmet Yılmaz',
                     style: TextStyle(
@@ -169,7 +169,7 @@ class HomeView extends StackedView<HomeViewModel> {
         style: TextStyle(color: Colors.white.withOpacity(0.8)),
       ),
       onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
     );
   }
 
@@ -203,18 +203,18 @@ class HomeView extends StackedView<HomeViewModel> {
 
   Widget _buildSearchSection() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24),
-      padding: EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(horizontal: 24),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           colors: [Color(0xFF667eea), Color(0xFF764ba2)],
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Color(0xFF667eea).withOpacity(0.3),
+            color: const Color(0xFF667eea).withOpacity(0.3),
             blurRadius: 20,
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
           ),
         ],
       ),
@@ -235,12 +235,12 @@ class HomeView extends StackedView<HomeViewModel> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             children: [
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(10),
@@ -254,10 +254,10 @@ class HomeView extends StackedView<HomeViewModel> {
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(10),
@@ -280,14 +280,14 @@ class HomeView extends StackedView<HomeViewModel> {
 
   Widget _buildStatsSection() {
     return Container(
-      margin: EdgeInsets.all(24),
+      margin: const EdgeInsets.all(24),
       child: Row(
         children: [
-          Expanded(child: _buildStatCard('12', 'Başvuru', Color(0xFF4285F4))),
-          SizedBox(width: 16),
-          Expanded(child: _buildStatCard('3', 'Mülakat', Color(0xFF34A853))),
-          SizedBox(width: 16),
-          Expanded(child: _buildStatCard('1', 'Teklif', Color(0xFFFF6B6B))),
+          Expanded(child: _buildStatCard('12', 'Başvuru', const Color(0xFF4285F4))),
+          const SizedBox(width: 16),
+          Expanded(child: _buildStatCard('3', 'Mülakat', const Color(0xFF34A853))),
+          const SizedBox(width: 16),
+          Expanded(child: _buildStatCard('1', 'Teklif', const Color(0xFFFF6B6B))),
         ],
       ),
     );
@@ -295,7 +295,7 @@ class HomeView extends StackedView<HomeViewModel> {
 
   Widget _buildStatCard(String number, String label, Color color) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -303,7 +303,7 @@ class HomeView extends StackedView<HomeViewModel> {
           BoxShadow(
             color: color.withOpacity(0.1),
             blurRadius: 10,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -317,7 +317,7 @@ class HomeView extends StackedView<HomeViewModel> {
               color: color,
             ),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             label,
             style: const TextStyle(
@@ -336,7 +336,7 @@ class HomeView extends StackedView<HomeViewModel> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -350,16 +350,16 @@ class HomeView extends StackedView<HomeViewModel> {
               ),
               TextButton(
                 onPressed: () {},
-                child: Text('Tümünü Gör'),
+                child: const Text('Tümünü Gör'),
               ),
             ],
           ),
         ),
-        Container(
+        SizedBox(
           height: 280,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             itemCount: viewModel.featuredInternships.length,
             itemBuilder: (context, index) {
               return _buildInternshipCard(viewModel.featuredInternships[index]);
@@ -373,7 +373,7 @@ class HomeView extends StackedView<HomeViewModel> {
   Widget _buildInternshipCard(Map<String, dynamic> internship) {
     return Container(
       width: 280,
-      margin: EdgeInsets.only(right: 16),
+      margin: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
@@ -381,12 +381,12 @@ class HomeView extends StackedView<HomeViewModel> {
           BoxShadow(
             color: Colors.black.withOpacity(0.08),
             blurRadius: 15,
-            offset: Offset(0, 8),
+            offset: const Offset(0, 8),
           ),
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -407,7 +407,7 @@ class HomeView extends StackedView<HomeViewModel> {
                   child:
                       Icon(internship['logo'], color: Colors.white, size: 24),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -434,29 +434,29 @@ class HomeView extends StackedView<HomeViewModel> {
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.bookmark_border, color: Color(0xFF718096)),
+                  icon: const Icon(Icons.bookmark_border, color: Color(0xFF718096)),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               children: [
-                Icon(Icons.location_on, size: 16, color: Color(0xFF718096)),
-                SizedBox(width: 4),
+                const Icon(Icons.location_on, size: 16, color: Color(0xFF718096)),
+                const SizedBox(width: 4),
                 Text(internship['location'],
-                    style: TextStyle(color: Color(0xFF718096))),
-                SizedBox(width: 16),
-                Icon(Icons.schedule, size: 16, color: Color(0xFF718096)),
-                SizedBox(width: 4),
+                    style: const TextStyle(color: Color(0xFF718096))),
+                const SizedBox(width: 16),
+                const Icon(Icons.schedule, size: 16, color: Color(0xFF718096)),
+                const SizedBox(width: 4),
                 Text(internship['duration'],
-                    style: TextStyle(color: Color(0xFF718096))),
+                    style: const TextStyle(color: Color(0xFF718096))),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
                     color: internship['color'].withOpacity(0.1),
                     borderRadius: BorderRadius.circular(6),
@@ -472,7 +472,7 @@ class HomeView extends StackedView<HomeViewModel> {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -491,9 +491,9 @@ class HomeView extends StackedView<HomeViewModel> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   ),
-                  child: Text('Başvur', style: TextStyle(color: Colors.white)),
+                  child: const Text('Başvur', style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),
@@ -508,7 +508,7 @@ class HomeView extends StackedView<HomeViewModel> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -522,13 +522,13 @@ class HomeView extends StackedView<HomeViewModel> {
               ),
               TextButton(
                 onPressed: () {},
-                child: Text('Tümünü Gör'),
+                child: const Text('Tümünü Gör'),
               ),
             ],
           ),
         ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.symmetric(horizontal: 24),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
@@ -536,20 +536,20 @@ class HomeView extends StackedView<HomeViewModel> {
               BoxShadow(
                 color: Colors.black.withOpacity(0.05),
                 blurRadius: 10,
-                offset: Offset(0, 4),
+                offset: const Offset(0, 4),
               ),
             ],
           ),
           child: Column(
             children: [
               _buildApplicationItem('Backend Developer', 'TechStart',
-                  'Değerlendirmede', Color(0xFFFF9500)),
-              Divider(height: 1),
+                  'Değerlendirmede', const Color(0xFFFF9500)),
+              const Divider(height: 1),
               _buildApplicationItem('Product Manager', 'InnovateCorp',
-                  'Mülakat', Color(0xFF34C759)),
-              Divider(height: 1),
+                  'Mülakat', const Color(0xFF34C759)),
+              const Divider(height: 1),
               _buildApplicationItem(
-                  'Data Analyst', 'DataPro', 'Reddedildi', Color(0xFFFF3B30)),
+                  'Data Analyst', 'DataPro', 'Reddedildi', const Color(0xFFFF3B30)),
             ],
           ),
         ),
@@ -560,7 +560,7 @@ class HomeView extends StackedView<HomeViewModel> {
   Widget _buildApplicationItem(
       String title, String company, String status, Color statusColor) {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Row(
         children: [
           Container(
@@ -572,21 +572,21 @@ class HomeView extends StackedView<HomeViewModel> {
             ),
             child: Icon(Icons.work_outline, color: statusColor, size: 20),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Color(0xFF2D3748),
                   ),
                 ),
                 Text(
                   company,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF718096),
                     fontSize: 12,
                   ),
@@ -595,7 +595,7 @@ class HomeView extends StackedView<HomeViewModel> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
               color: statusColor.withOpacity(0.1),
               borderRadius: BorderRadius.circular(6),
@@ -617,9 +617,9 @@ class HomeView extends StackedView<HomeViewModel> {
   Widget _buildFloatingActionButton() {
     return FloatingActionButton.extended(
       onPressed: () {},
-      backgroundColor: Color(0xFF667eea),
-      icon: Icon(Icons.add, color: Colors.white),
-      label: Text('Yeni Staj', style: TextStyle(color: Colors.white)),
+      backgroundColor: const Color(0xFF667eea),
+      icon: const Icon(Icons.add, color: Colors.white),
+      label: const Text('Yeni Staj', style: TextStyle(color: Colors.white)),
     );
   }
 }
@@ -639,7 +639,7 @@ class CategoriesSectionWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -653,33 +653,33 @@ class CategoriesSectionWidget extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text('Tümünü Gör'),
+                      child: const Text('Tümünü Gör'),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 16),
-              Container(
+              const SizedBox(height: 16),
+              SizedBox(
                 height: 50,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   itemCount: viewModel.categories.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.only(right: 12),
+                      margin: const EdgeInsets.only(right: 12),
                       child: Chip(
                         label: Text(
                           viewModel.categories[index],
                           style: TextStyle(
                             color:
-                                index == 0 ? Colors.white : Color(0xFF667eea),
+                                index == 0 ? Colors.white : const Color(0xFF667eea),
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         backgroundColor:
-                            index == 0 ? Color(0xFF667eea) : Colors.white,
-                        side: BorderSide(color: Color(0xFF667eea)),
+                            index == 0 ? const Color(0xFF667eea) : Colors.white,
+                        side: const BorderSide(color: Color(0xFF667eea)),
                       ),
                     );
                   },

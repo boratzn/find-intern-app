@@ -1,6 +1,7 @@
 import 'package:find_intern/app/app.locator.dart';
 import 'package:find_intern/app/app.router.dart';
 import 'package:flutter/material.dart';
+import 'package:shorebird_code_push/shorebird_code_push.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class StartupView extends StatefulWidget {
@@ -18,10 +19,12 @@ class _StartupViewState extends State<StartupView>
   late Animation<double> _textAnimation;
   final _navigationService = locator<NavigationService>();
 
+  final updater = ShorebirdUpdater();
+
   @override
   void initState() {
     super.initState();
-
+    _checkForUpdates();
     _logoController = AnimationController(
       duration: const Duration(milliseconds: 1500),
       vsync: this,
@@ -66,6 +69,20 @@ class _StartupViewState extends State<StartupView>
     super.dispose();
   }
 
+  Future<void> _checkForUpdates() async {
+    // Check whether a new update is available.
+    final status = await updater.checkForUpdate();
+
+    if (status == UpdateStatus.outdated) {
+      try {
+        // Perform the update
+        await updater.update();
+      } on UpdateException catch (error) {
+        // Handle any errors that occur while updating.
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +119,7 @@ class _StartupViewState extends State<StartupView>
                       BoxShadow(
                         color: Colors.black.withOpacity(0.1),
                         blurRadius: 20,
-                        offset: Offset(0, 10),
+                        offset: const Offset(0, 10),
                       ),
                     ],
                   ),
@@ -139,7 +156,7 @@ class _StartupViewState extends State<StartupView>
                           ),
                         ),
                       ),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       Text(
                         'Hayalindeki stajı bul',
                         style: TextStyle(
@@ -153,12 +170,12 @@ class _StartupViewState extends State<StartupView>
                 ),
               ),
 
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
 
               // Loading indicator
               FadeTransition(
                 opacity: _textAnimation,
-                child: Container(
+                child: SizedBox(
                   width: 40,
                   height: 40,
                   child: CircularProgressIndicator(

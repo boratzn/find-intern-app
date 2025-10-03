@@ -21,7 +21,7 @@ class HomeViewModel extends BaseViewModel {
       'type': 'Tam Zamanlı',
       'logo': Icons.code,
       'salary': '₺3,500',
-      'color': Color(0xFF667eea),
+      'color': const Color(0xFF667eea),
     },
     {
       'title': 'UI/UX Design Intern',
@@ -31,7 +31,7 @@ class HomeViewModel extends BaseViewModel {
       'type': 'Yarı Zamanlı',
       'logo': Icons.design_services,
       'salary': '₺2,800',
-      'color': Color(0xFF764ba2),
+      'color': const Color(0xFF764ba2),
     },
     {
       'title': 'Digital Marketing Stajyeri',
@@ -41,7 +41,7 @@ class HomeViewModel extends BaseViewModel {
       'type': 'Hibrit',
       'logo': Icons.campaign,
       'salary': '₺3,000',
-      'color': Color(0xFFf093fb),
+      'color': const Color(0xFFf093fb),
     },
   ];
 
